@@ -1518,6 +1518,7 @@ class FetchAuthBackends(ZulipTestCase):
                     ('google', check_bool),
                     ('github', check_bool),
                     ('email', check_bool),
+                    ('microsoft', check_bool),
                     ('ldap', check_bool),
                     ('dev', check_bool),
                     ('remoteuser', check_bool),
