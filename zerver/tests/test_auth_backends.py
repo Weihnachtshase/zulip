@@ -1553,7 +1553,7 @@ class FetchAuthBackends(ZulipTestCase):
         self.assert_json_success(result)
         data = result.json()
         self.assertEqual(set(data.keys()),
-                         {'msg', 'password', 'github', 'google', 'email', 'ldap',
+                         {'msg', 'password', 'github', 'google', 'email', 'ldap', 'microsoft',
                           'dev', 'result', 'remoteuser', 'zulip_version'})
         for backend in set(data.keys()) - {'msg', 'result', 'zulip_version'}:
             self.assertTrue(isinstance(data[backend], bool))
@@ -1571,6 +1571,7 @@ class FetchAuthBackends(ZulipTestCase):
                 'google': True,
                 'dev': True,
                 'email': False,
+                'microsoft': False,
                 'ldap': False,
                 'remoteuser': False,
                 'result': 'success',
@@ -1588,6 +1589,7 @@ class FetchAuthBackends(ZulipTestCase):
                     'github': False,
                     'google': True,
                     'email': False,
+                    'microsoft': False,
                     'ldap': False,
                     'remoteuser': False,
                     'dev': True,
@@ -1614,6 +1616,7 @@ class FetchAuthBackends(ZulipTestCase):
                     'github': False,
                     'google': False,
                     'email': False,
+                    'microsoft': False,
                     'ldap': False,
                     'remoteuser': False,
                     'dev': True,
@@ -1637,6 +1640,7 @@ class FetchAuthBackends(ZulipTestCase):
                     'github': False,
                     'google': False,
                     'email': False,
+                    'microsoft': False,
                     'remoteuser': False,
                     'ldap': False,
                     'dev': True,
